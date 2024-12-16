@@ -267,6 +267,11 @@ table {
         background-repeat: no-repeat; /* 避免背景图重复 */
     }
 
+
+    .KeyPoint{
+        top: 45%;
+        gap: 16px;
+    }
     
 
    
