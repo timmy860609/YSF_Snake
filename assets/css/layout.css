@@ -47,15 +47,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* banner */
-.kv{
-    display: flex;
-    justify-content: center;
-    max-width: 1200px;
-    padding: 0px 32px;
-    align-items: center;
-}
-
 .coin-1{
     position: absolute;
     z-index: 1;
@@ -149,26 +140,105 @@ table {
 
 .Banner{
     margin-top: 80px;
-    background-image: url(../images/Banner/Kv_1440.png);
-    background-position: 50%;
+    background: radial-gradient(50% 50% at 50% 50%, #F03E5E 0%, #880A0C 100%);
     width: 100%;  
-    background-size: cover;
     height: 100vh;
+    position: relative;
+}
+.BannerBG{
+    background-image: url(../images/Banner/KV_BG.png);
+    mix-blend-mode: soft-light;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.4;
+}
+.Cloud{
+    background-image: url(../images/Banner/Cloud.png);
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
+.Snake{
+    background-image: url(../images/Banner/Snake.png);
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-@media (max-width: 767px) {
+.KvTitle{
+    background-image: url(../images/Banner/Title.png);
+    width: 100%;
+    height: 320px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.Banner button{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1023px) {
+
     .Banner{
-        background-image: url(../images/Banner/KV_360.png);
-        margin-top: 58px;
+        height: 95vh;
+    }
+
+    .BannerBG{
+        height: 95vh;
+    }
+
+    .KvTitle{
+        width:80vw;
+        height: 100%;
+        
+
+        
     }
 }
 
-.compony{
+@media (max-width: 767px) {
 
-    font-size: 14px;
-    padding: 8px 24px;
+    .Banner{
+        height: 90vh;
+    }
 
+    .BannerBG{
+        height: 90vh;
+    }
+
+    .Cloud{
+        width: 100vw;
+        height: 50vh;
+        background-image: url(../images/Banner/Cloud_360.png);
+        background-size: contain; /* 或 contain */
+        background-position: bottom center;
+        background-repeat: no-repeat; /* 避免背景图重复 */
+    }
+
+    
 }
 
-
+.compony{
+    font-size: 14px;
+    padding: 8px 24px;
+}

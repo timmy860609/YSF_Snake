@@ -614,8 +614,8 @@ button:hover{
     display: flex;
     flex-direction: column;
     gap: 40px;
-    border-right: 16px solid #B30003;
-    border-left: 16px solid #B30003;
+    border-right: 24px solid #B30003;
+    border-left: 24px solid #B30003;
     margin: 0 auto;
     background-color: #FFF3EB;
 }
@@ -731,7 +731,10 @@ button:hover{
 @media (max-width: 767px) {
 
     .ChatContent{
+        width: 90%;
         padding: 10% 2%;
+        border-left: 16px solid #B30003;
+        border-right: 16px solid #B30003;
     }
 
     .SnakeLeft,.SnakeRight{
