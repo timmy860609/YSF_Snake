@@ -157,10 +157,10 @@ table {
 .Cloud{
     background-image: url(../images/Banner/Cloud.png);
     background-position: bottom center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 50vh;
+    width: 100%;
+    height: 40vh;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -186,53 +186,46 @@ table {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    padding: 0 24px;
 }
 
 .KvTitle{
-    background-image: url(../images/Banner/Title.png);
-    width: 100%;
-    height: 320px;
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .SecondaryTitle{
-    background-image: url(../images/Banner/SubTitle.png);
-    width: 100%;
-    height: 105px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 16px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 @media (max-width: 1023px) {
 
     .Banner{
         height: 95vh;
+        margin-top: 72px;
     }
+
 
     .BannerBG{
         height: 95vh;
     }
 
-    .KvTitle{
-        height: 320px;
-        width: 90%;
-        margin: 0 auto;
+    
+
+    .Snake{
+        display: none;
     }
 }
 
 @media (max-width: 767px) {
 
     .Banner{
-        height: 90vh;
+        height: 80vh;
     }
 
     .BannerBG{
-        height: 90vh;
+        height: 80vh;
     }
 
     .Cloud{
@@ -244,14 +237,10 @@ table {
         background-repeat: no-repeat; /* 避免背景图重复 */
     }
 
-    .KvTitle{
-        height: 200px;
-    }
-
-    .SecondaryTitle{
-        height: 52px;
-    }
     
+
+   
+
 }
 
 .compony{
