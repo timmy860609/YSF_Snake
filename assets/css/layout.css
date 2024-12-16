@@ -177,6 +177,18 @@ table {
     left: 0;
 }
 
+.KeyPoint{
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 .KvTitle{
     background-image: url(../images/Banner/Title.png);
     width: 100%;
@@ -184,17 +196,16 @@ table {
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
-    top: 30%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
 }
 
-.Banner button{
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+.SecondaryTitle{
+    background-image: url(../images/Banner/SubTitle.png);
+    width: 100%;
+    height: 105px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 16px;
 }
 
 @media (max-width: 1023px) {
@@ -208,11 +219,9 @@ table {
     }
 
     .KvTitle{
-        width:80vw;
-        height: 100%;
-        
-
-        
+        height: 320px;
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
@@ -235,6 +244,13 @@ table {
         background-repeat: no-repeat; /* 避免背景图重复 */
     }
 
+    .KvTitle{
+        height: 200px;
+    }
+
+    .SecondaryTitle{
+        height: 52px;
+    }
     
 }
 
