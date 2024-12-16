@@ -1,0 +1,174 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: "Open Sans", "Noto Sans TC", sans-serif, Arial, Helvetica;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* banner */
+.kv{
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 0px 32px;
+    align-items: center;
+}
+
+.coin-1{
+    position: absolute;
+    z-index: 1;
+    width: 22%;
+    top: 18%;
+    left: 6%;
+    transform: translateY(0%);
+    animation: coin-1 2.5s infinite;
+}
+
+.coin-2{
+    position: absolute;
+    z-index: 1;
+    width: 22%;
+    bottom: 10%;
+    left: 2%;
+    transform: translateY(0%);
+    animation: coin-2 2s infinite;
+}
+
+.coin-3{
+    position: absolute;
+    z-index: 1;
+    width: 18%;
+    top: 8%;
+    right: 10%;
+    transform: translateY(0%);
+    animation: coin-3 2s infinite;
+}
+
+.star-1{
+    position: absolute;
+    z-index: 1;
+    width: 52px;
+    top: 24px;
+    left: -32px;
+    animation: twinkle 1s infinite ease-in-out;
+}
+
+.star-2{
+    position: absolute;
+    z-index: -1;
+    width: 32px;
+    right: 0%;
+    bottom: 30%;
+    animation: twinkle 1s infinite ease-in-out;
+    animation-delay: 1.5s;
+}
+
+@keyframes floater {
+    0%{transform: translateY(0px);transition: ease 3s;}
+    50%{transform: translateY(16px);transition: ease 3s;}
+  }
+  @keyframes coin-1 {
+    0%{transform: translateY(0px);transition: ease 3s;}
+    50%{transform: translateY(-20px);transition: ease 3s;}
+  }
+  @keyframes coin-2 {
+    0%{transform: translateY(0px);transition: ease 3s;}
+    50%{transform: translateY(20px);transition: ease 3s;}
+  }
+  @keyframes coin-3 {
+    0%{transform: translateY(0%);transition: ease 3s;}
+    50%{transform: translateY(-35%);transition: ease 3s;}
+  }
+  @keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+    @keyframes twinkle {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.2;
+            transform: scale(1.5);
+        }
+    }
+    @keyframes shadow {
+        0% {transform: scale(1);filter: blur(8px);}
+        100% {transform: scale(.8);filter: blur(2px);}
+    }
+
+
+.Banner{
+    margin-top: 80px;
+    background-image: url(../images/Banner/Kv_1440.png);
+    background-position: 50%;
+    width: 100%;  
+    background-size: cover;
+    height: 100vh;
+}
+
+
+@media (max-width: 767px) {
+    .Banner{
+        background-image: url(../images/Banner/KV_360.png);
+        margin-top: 58px;
+    }
+}
+
+.compony{
+
+    font-size: 14px;
+    padding: 8px 24px;
+
+}
+
+

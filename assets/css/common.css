@@ -1,0 +1,446 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    max-height: 999999px
+}
+
+
+:focus {
+    outline: 0
+}
+
+img {
+    width: 100%;
+    vertical-align: middle
+}
+
+ .iMoney{
+    overflow-x: hidden;
+} 
+
+.clearboth {
+    clear: both
+}
+
+.breakMob {
+    display: none
+}
+
+.wrapper {
+    width: 100%;
+    color: #323232;
+    font-weight: 400;
+}
+
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    height: 80px;
+    z-index: 100;
+    background-image: url("../images/header/header_bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: white;
+    z-index: 9999999;
+}
+
+.header.scrolling {
+    -webkit-box-shadow: 0 0 18px rgba(0,0,0,0.22);
+    box-shadow: 0 0 18px rgba(0,0,0,0.22)
+}
+
+.header .yuantaLogo a {
+    display: inline-block;
+    width: 198px;
+    height: 40px;
+    background-image: url("../images/header/HeaderLogo.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ----------Body---------- */
+
+.Main{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.Section{
+    max-width: 1440px;
+    padding: 120px;
+    margin: 0 auto;
+}
+
+/* -------Element1-------- */
+
+.Element1{
+    width: 100%;
+    position: relative;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.Element1::before {
+    content: "";
+    position: absolute;
+    top: 10%; 
+    left: 0; 
+    width: 15vw;
+    height: 30vw; 
+    background-image: url(../images/illustration/Element1.png);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+.Element1::after{
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 15vw;
+    height: 30vw;
+    background-image: url(../images/illustration/Element1-1.png);
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+/* -------Element2-------- */
+
+.Element2{
+    background: linear-gradient(312deg, #E4D0A5 1.95%, #FFF 107.32%);
+    position: relative;
+}
+
+
+
+.Element2::before{
+    content: "";
+    position: absolute;
+    top: 10%; 
+    left: 0; 
+    width: 15vw;
+    height: 30vw; 
+    background-image: url(../images/illustration/Element2.png);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+.Element2::after{
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    width: 20vw;
+    height: 40vw;
+    background-image: url(../images/illustration/Element2-1.png);
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+/* -------Element3-------- */
+
+.Element3{
+
+    background-image: url(../images/illustration/Title3BG.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+/* -------Element4-------- */
+
+.Element4{
+    background-color: #880A0C;
+    position: relative;
+}
+
+.Element4::before{
+    content: "";
+    position: absolute;
+    top: 10%; 
+    left: 0; 
+    width: 30vw;
+    height: 60vw; 
+    background-image: url(../images/illustration/Element4.png);
+    background-position: top left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+.Element4::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 80vw;
+    background-image: url(../images/illustration/Element4-1.png);
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+
+/* ------Element-RWD------ */
+
+@media (max-width: 1439px) {
+    .Section{
+        padding: 64px 32px;
+    }
+}
+@media (max-width: 1024px) {
+    .Item{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .Element1::before {
+        top: 80%;
+    }
+
+    .Element1::after{
+        top: 5%;
+    }
+    .Section{
+        padding: 60px 24px;
+    }
+}
+
+/* -----------Footer--------- */
+
+.footer {
+    width: 100%;
+    background-color: #007fe0;
+    height: auto;
+    padding: 10px 0
+}
+.footer a {
+    color: #fff
+}
+
+.footerCont {
+    color: white;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.contWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 1439px) {
+    .contWrapper{
+        flex-direction: column;
+    }
+}
+.goTop {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    right: 64px;
+    bottom: 280px;
+    opacity: .7;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    background-image: url("../images/side/goTop.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat
+}
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+    .header {
+        height:72px
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+  
+    .breakMob {
+        display: block
+    }
+
+    .header {
+        padding: 16px;
+        height: 58px
+    }
+
+    .header .yuantaLogo a {
+        width: 160px;
+    }
+
+    
+    .footer {
+        height: auto;
+        margin-bottom: 56px;
+
+    }
+
+
+
+    .footerCont .copyright,.footerCont .contact {
+        float: none;
+        display: block;
+        max-width: 100%;
+        text-align: left;
+        padding: 8px 24px;
+    }
+
+    .goTop {
+        width: 54px;
+        height: 54px;
+        bottom: 96px;
+        right: 14px;
+    }
+}
+
+/* FooterDownload */
+.appDownload{
+    background-color: #F6FAFF;
+}
+.appDownload-QRcode{
+    width: 184px;
+    height: 184px;
+    background-color: white;
+    border-radius: 16px;
+    margin: 0 auto;
+}
+
+.store img{
+    width: 220px;
+    filter: drop-shadow(4px 6px 10px rgba(42, 106, 174, 0.35));
+}
+
+.Download-CTA{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 328px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.store a{
+    transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
+}
+.store a:hover{
+    transform: translateY(-4px);
+}
+
+.imoney-app{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    gap: 16px;
+}
+.imoney-app h2{
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+.imoney-app p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+.store{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.store-block{
+    padding: 64px 24px;
+}
+
+
+@media (max-width: 1023px) {
+    .store-block{
+        padding: 48px 24px;
+    }
+    .store-block{
+        padding: 40px 24px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .store img{
+        width: 140px;
+        filter: drop-shadow(2.768px 4.153px 6.921px rgba(42, 106, 174, 0.35));
+    }
+    .imoney-app h2{
+        font-size: 24px;
+    }
+    .imoney-app p{
+        font-size: 16px;
+    }
+    .appDownload-QRcode{
+        display: none;
+    }
+    .store{
+        flex-direction: row;
+    }
+    .Download-CTA{
+        margin-top: 24px;
+        width: 60%;
+    }
+    .store-block{
+        padding: 24px 24px;
+    }
+    .imoney-app img{
+        margin-bottom: 8px;
+        filter: drop-shadow(0px 4.849px 8.485px rgba(0, 92, 184, 0.13));
+    }
+    .appDownload{
+        margin-bottom: 67px;
+    }
+}
+
+

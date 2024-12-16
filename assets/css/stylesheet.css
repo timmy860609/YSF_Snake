@@ -1,0 +1,693 @@
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #FFF2E8 0%, #FFF1C7 100%);
+    border: none;
+    padding: 16px 24px;
+    color: #272727;
+    border: 1px solid #272727;
+    font-size: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
+    box-shadow: 0px 4px 0px 0px #272727;
+}
+
+button:hover{
+    background: linear-gradient(180deg, #FFF1C7 0%, #FFF2E8 100%);
+    transform: scale(1.05);
+}
+
+.BtnElementLeft,.BtnElementRight{
+    width: 20px;
+}
+
+.BtnElementRight{
+    rotate: 180deg;
+}
+
+.MainButton{
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    button{
+        width: 100%;
+    }
+    .MainButton{
+        width: 100%;
+    }
+}
+
+
+
+.FloatButton1,.FloatButton2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white; 
+    width: 104px;
+    height: 104px;
+    background-image: url("../images/side/FloatBtn-1.png");
+    background-size: cover;
+    font-size: 18px;
+    transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
+    text-align: center;
+}
+
+
+.FloatButton2 {
+    background-image: url("../images/side/FloatBtn-2.png");
+}
+
+.FloatButton1:hover,.FloatButton2:hover{
+    transform: translateY(-4px);
+}
+
+
+.FloatButton2:hover{
+    transform: translateY(-4px);
+}
+
+.fixed-btn{
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 100;
+}
+
+@media (max-width: 767px) {
+    
+    .float-btn,.float-btn-2{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        padding: 20px 0px;
+        border-radius: 0px;
+        font-size: 18px;
+        gap: 8px;
+    }
+
+    
+    .compony{
+        font-size: 14px;
+        margin-top: 4px;
+        text-align: left;
+    }
+
+    .fixed-btn{
+        right: 0;
+        bottom: 0;
+        flex-direction: row;
+        width: 100%;
+        gap: 0px;
+    }
+
+    .btn:hover,.btn-secondary:hover,.float-btn-2:hover,.float-btn:hover{
+        transform: none;
+    }
+} 
+
+
+
+
+/* card-item*/
+
+/* chip animation */
+@keyframes spread-background {
+    0% {
+        box-shadow: 0 0 0 0 rgb(255, 223, 184); 
+    }
+    100% {
+        box-shadow: 0 0 10px 20px rgba(255, 255, 255, 0); 
+    }
+}
+
+.chip{
+    perspective: 1000px; 
+    height: 40px;
+    width: 120px;
+    position: relative;
+    transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
+    
+}
+.chip:hover{
+    transform: translateY(-4px);
+}
+
+.chip-text{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+}
+
+.front{
+    animation: spread-background 1s infinite ease-in-out; /* 擴散動畫 */
+    transition: background-color 0.5s ease; /* 過渡效果 */
+    border-radius: 100px;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+  }
+
+.front {
+    background-color: #FDEFE6;
+    color: #EA6F17;
+    
+  }
+
+.front p{
+    font-weight: 500;
+  }
+
+  
+.back {
+    background-color: #EA6F17;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+.flip .chip-text {
+    transform: rotateY(180deg);
+  }
+
+.sales{
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 0px;
+    text-align: center;
+    background-color: #FDEFE6;
+    border-radius: 0px 0px 16px 16px;
+    color: #EB6100;
+}
+
+/* 星星容器 */
+.sparkle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 星星樣式 */
+.sparkle {
+    position: absolute;
+    width: 12px; 
+    height: 12px; 
+    background-color: transparent;
+    clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+    border-radius: 60%;
+    animation: sparkle-animation 1s ease-out forwards;
+}
+/* 星星動畫 */
+@keyframes sparkle-animation {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg); /* 初始狀態 */
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--translateX), var(--translateY)) scale(2) rotate(720deg); /* 最終狀態 */
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .sales{
+        font-size: 14px;
+        top: 0;
+        right: 0;
+        padding: 0px 8px 0px 8px;
+        bottom: auto;
+        width: auto;
+        border-radius: 0px 0px  0px 8px;
+        white-space: nowrap;
+    }
+}
+
+
+
+/* --------------- Section1 ---------------*/
+
+
+.TextLine,.FirstLine{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.TextLine img,.FirstLine img{
+    width: auto;
+    height: 72px;
+    margin: 0 auto;
+}
+
+
+
+.Item{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 40px 32px;
+    border-right: 24px solid #B30003;
+    border-left: 24px solid #B30003;
+    margin: 0 auto;
+    background-color: #FFF3EB;
+}
+
+.ItemContent span{
+    font-size:18px ;
+    margin-bottom: 4px;
+}
+
+.ItemContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+
+.ItemContent img{
+    width: auto;
+    height: 50px;
+}
+
+.ItemContent p{
+    width: 80%;
+    text-align: center;
+    padding: 8px 0px;
+    border-top: #00A5A8 solid 2px;
+    border-bottom: #00A5A8 solid 2px;
+    
+}
+
+.ItemTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin:16px 0 24px 0;
+}
+
+
+.ItemTitle span{
+    color: #00A5A8;
+    font-weight: 700;
+}
+
+/* -----RodElement----- */
+
+.Rod{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Center{
+    width: 100%;
+}
+.HorTop{
+    width: 100%;
+    height: 16px;
+    background-color: #B30003;
+}
+
+.HorBottom{
+    width: 100%;
+    height: 10px;
+    background-color: #A00002;
+}
+
+.OutPoint{
+    width: 24px;
+}
+
+.OutPointTop{
+    width: 100%;
+    height: 16px;
+    background-color: #E8AD4F;
+}
+
+.OutPointBottom{
+    width: 100%;
+    height: 10px;
+    background-color: #E2993C;
+}
+
+.OuterMost{
+    width: 14px;
+    height: 13px;
+    background-color: #323232;
+}
+
+@media (max-width: 1023px) {
+
+    .FirstLine img{
+        height: 144px;
+    }
+
+    .Item{
+        align-items: center;
+        gap: 56px;
+    }
+
+    .ItemTitle{
+        margin:16px 0 8px 0;
+    }
+
+    .ItemContent p{
+        width: 40%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .TextLine,.FirstLine{
+        margin-bottom: 32px;
+    }
+
+    .FirstLine img{
+        height: 78px;
+    }
+
+    .TextLine img{
+        height: 39px;
+    }
+        
+
+    .Item{
+        width: 90%;
+        padding: 24px 16px;
+        border-right: 16px solid #B30003;
+        border-left: 16px solid #B30003;
+    }
+
+    .ItemContent p{
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .HorTop,.OutPointTop{
+        height: 16px;
+    }
+
+    .HorBottom,.OutPointBottom{
+        height: 8px;
+    }
+
+    .OutPoint{
+        width: 18px;
+    }
+
+    .OuterMost{
+        width: 10px;
+        height: 12px;
+    }
+
+    .ItemContent img{
+        height: 45px;
+    }
+
+}
+
+
+/* --------------- Section2 ---------------*/
+.SubTitle{
+    text-align: center;
+    margin-top: -56px;
+    margin-bottom: 80px;
+}
+
+.OutLineCard{
+    padding: 80px;
+    background-color: white;
+    border: 2px solid #850400;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    position: relative;
+    z-index: 10;
+}
+
+/* ETF */
+
+.ETF{
+    padding: 64px 16px 40px 16px;
+    border: 2px solid #E8AD4F;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.ETFTitle,.StockTitle{
+    width: auto;
+    height: 78px;
+    position: absolute;
+    top: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Stock{
+    position: relative;
+    padding: 62px 16px 40px 16px ;
+    border: 2px solid #E8AD4F;
+    border-radius: 10px;
+    margin-top: 39px;
+}
+
+
+.ETF p,.ETF span {
+    font-weight: 500;
+}
+
+.StockTable{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.StockItem{
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E9E9E9;
+
+}
+
+.StockBlock{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.Block1,.Block2{
+    width: 50%;
+    padding: 40px 24px 24px 24px;
+    text-align: center;
+    border: 2px solid #E8AD4F;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 26px;
+}
+
+
+.ChipTitle{
+    background-color: #FB5D01;
+    white-space: nowrap;
+    color: white;
+    padding: 8px 24px;
+    display: inline;
+    border-radius: 1000px;
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@media (max-width: 767px) {
+
+    .OutLineCard{
+        padding: 40px 16px;
+    }
+
+    .SubTitle{
+        margin-top: -8px;
+        margin-bottom: 32px;
+    }
+
+    .StockTable{
+        gap: 10px;
+    }
+
+    .ETF,.Stock{
+        padding: 40px 16px 24px 16px;
+        margin-top: 22px;
+    }
+
+    .ETFTitle,.StockTitle{
+        height: 45px;
+        top: -24px;
+    }
+
+    .OutLineCard{
+        gap: 32px;
+    }
+
+    .ChipTitle{
+        font-size: 18px;
+    }
+
+    .StockBlock{
+        flex-direction: column;
+    }
+
+    .Block1,.Block2{
+        width: 100%;
+    }
+
+}
+
+    
+/* --------------- Section3 ---------------*/
+
+
+
+.ChatContent{
+    width: 95%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-right: 16px solid #B30003;
+    border-left: 16px solid #B30003;
+    margin: 0 auto;
+    background-color: #FFF3EB;
+}
+
+.SnakeLeft,.SnakeRight{
+    display: flex;
+    gap: 20px;
+}
+
+.SnakeRight{
+    justify-content: flex-end;
+}
+
+.Sticker{
+    width: 111px;
+    height: 111px;
+}
+
+.Step{
+    font-size: 18px;
+    padding: 8px 20px;
+    background-color: #FB5D01;
+    display: inline;
+    color: white;
+    font-weight: 700;
+    border-radius: 1000px;
+    white-space: nowrap;
+}
+
+.Chat{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.ChatBox{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 44px 120px;
+    background-image: url(../images/illustration/TalkLeft.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ChatBoxRight{
+    display: flex;
+    padding: 64px 54px;
+    width: 633px;
+    height: 201px;
+    background-image: url(../images/illustration/TalkRight.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* --------------- Section4 ---------------*/
+
+.NoteCard {
+    background-color: white;
+    padding: 64px 80px;
+    border: 5px solid #FFD668;
+    border-radius: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.List {
+    counter-reset: list-counter;
+    margin: 0; 
+    padding-left: 0; 
+}
+
+.List li {
+    counter-increment: list-counter;
+    display: block;
+    margin-bottom: 12px; 
+    padding-left: 30px; 
+    word-wrap: break-word; 
+    position: relative;
+}
+
+.List li a {
+    word-break: break-word;
+    text-decoration: underline;
+}
+
+.List li::before {
+    content: counter(list-counter) "."; 
+    color: #333;
+    margin-right: 8px; 
+    flex-shrink: 0; 
+    position: absolute; 
+    left: 0;
+}
+
+
