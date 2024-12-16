@@ -24,6 +24,16 @@ button:hover{
 
 .BtnElementLeft,.BtnElementRight{
     width: 20px;
+    animation: swing 1s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: translateX(0); /* 初始與結束位置 */
+    }
+    50% {
+        transform: translateX(4px); /* 向右擺動的幅度 */
+    }
 }
 
 .BtnElementRight{
@@ -88,7 +98,7 @@ button:hover{
 
 @media (max-width: 767px) {
     
-    .float-btn,.float-btn-2{
+    .FloatButton1,.FloatButton2 {
         width: 100%;
         height: auto;
         flex-direction: row;
@@ -98,9 +108,23 @@ button:hover{
         border-radius: 0px;
         font-size: 18px;
         gap: 8px;
+        background-image: none;
+        background-color: #EA6F17;
+       
     }
 
+    .FloatButton2{
+        background-color: #F0A400;
+    }
+
+    .FloatButton1 br,.FloatButton2 br{
+        display: none;
+    }
     
+    .FloatButton1:hover,.FloatButton2:hover,button:hover{
+        transform: none;
+    }
+
     .compony{
         font-size: 14px;
         margin-top: 4px;
@@ -115,9 +139,6 @@ button:hover{
         gap: 0px;
     }
 
-    .btn:hover,.btn-secondary:hover,.float-btn-2:hover,.float-btn:hover{
-        transform: none;
-    }
 } 
 
 
