@@ -14,6 +14,7 @@ button{
     cursor: pointer;
     transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
     box-shadow: 0px 4px 0px 0px #272727;
+    white-space: nowrap;
 }
 
 button:hover{
@@ -36,6 +37,9 @@ button:hover{
 @media (max-width: 767px) {
     button{
         width: 100%;
+        font-size: 18px;
+        gap: 4px;
+        padding: 16px 12px;
     }
     .MainButton{
         width: 100%;
@@ -600,6 +604,7 @@ button:hover{
     gap: 20px;
 }
 
+
 .SnakeRight{
     justify-content: flex-end;
 }
@@ -648,6 +653,89 @@ button:hover{
     background-repeat: no-repeat;
 }
 
+@media (max-width: 1023px) {
+    
+    .ChatContent{
+        padding: 32px 24px;
+    }
+
+    .Sticker{
+        width: 36px;
+        height: 36px;
+    }
+
+    .Chat{
+        flex-direction: column;
+    }
+
+    .SnakeLeft,.SnakeRight{
+        flex-direction: column;
+    }
+    
+    .SnakeRight{
+        align-items: flex-end;
+    }
+
+    .Sticker{
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .SnakeRight img{
+        order: -1;
+    }
+    
+    .ChatBox{
+        padding: 10% 8%;
+        background-image: url(../images/illustration/TalkLeft_360.png);
+    }
+
+    .ChatBoxRight{
+        width: 100%;
+        height: auto;
+        padding: 10% 8%;
+        background-image: url(../images/illustration/TalkRight_360.png);
+    }
+}
+
+@media (max-width: 767px) {
+
+    .ChatContent{
+        padding: 10% 2%;
+    }
+
+    .SnakeLeft,.SnakeRight{
+        gap: 8px;
+    }
+
+    .Step{
+        font-size: 16px;
+        padding: 4px 12px;
+    }
+
+    .MainButton{
+        width: 240px;
+    }
+
+    .Chat{
+        gap: 8px;
+    }
+
+    .Chat p{
+        font-size: 16px;
+    }
+
+    .SnakeRight p{
+        padding: 0px 16px;
+    }
+
+    .ChatBox,.ChatBoxRight{
+        width: 100%;
+        gap: 16px;
+        padding: 15% 2%;
+    }
+
+}
 
 /* --------------- Section4 ---------------*/
 
