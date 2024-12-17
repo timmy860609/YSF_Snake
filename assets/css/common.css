@@ -167,6 +167,47 @@ img {
     animation: fadeIn 2s ease-in-out forwards; 
 }
 
+.ElementCoinBlock{
+    position: absolute;
+    width: 1200px;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ElementCoin1,.ElementCoin2,.ElementCoin3,.ElementCoin4{
+    position: absolute;
+}
+
+.ElementCoin1{
+    width: 115px;
+    height: 87px;
+    top: 6%;
+    left:-8%;
+}
+
+.ElementCoin2{
+    width: 48px;
+    height: 64px;
+    bottom: 0%;
+    left: -10%;
+}
+
+.ElementCoin3{
+    width: 90px;
+    height: 60px;
+    right: -10%;
+    top: 40%;
+}
+
+.ElementCoin4{
+    width: 82px;
+    height: 72px;
+    right: -15%;
+    top: 50%;
+}
+
 /* -------Element3-------- */
 
 .Element3{
@@ -174,7 +215,6 @@ img {
     background-image: url(../images/illustration/Title3BG.png);
     background-position: center;
     background-size: cover;
-
 }
 
 /* -------Element4-------- */
@@ -219,7 +259,11 @@ img {
     .Section{
         padding: 64px 32px;
     }
+    .ElementCoinBlock{
+        display: none;
+    }
 }
+
 @media (max-width: 1024px) {
     .Item{
         flex-direction: column;
@@ -429,7 +473,6 @@ img {
     }
     .Download-CTA{
         margin-top: 24px;
-        width: 60%;
     }
     .store-block{
         padding: 24px 24px;
