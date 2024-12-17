@@ -271,16 +271,16 @@ button:hover{
     animation-delay: 1s;
 }
 
-@media (max-width: 1023px) {
-
-    .CoinBlock{
-        width: 90%;
-        height: 50%;
-    }
+@media (max-width: 1439px) {
     .coin-1{
         top: 110%;
         left: 10%;
     }
+    .star-1{
+        top: 108%;
+        left: 15%;
+    }
+
     .star-1{
         top: 108%;
         left: 15%;
@@ -297,12 +297,33 @@ button:hover{
 
     .coin-3{
         right: 90%;
-        top: -20%;
+        top: -15%;
     }
 
     .star-3{
         right: 95%;
-        top: -20%;
+        top: -15%;
+    }
+}
+
+@media (max-width: 1023px) {
+
+
+    .coin-2{
+        width: 12%;
+        left: 80%;
+    }
+
+    .star-2{
+        left: 80%;
+    }
+
+    .coin-3{
+        right: 85%;
+    }
+
+    .star-3{
+        right: 85%;
     }
 
 }
@@ -314,34 +335,33 @@ button:hover{
         height: 45%;
     }
     .coin-1{
-        width: 32px;
+        width: 15%;
         top: 130%;
         left: 0%;
     }
     .star-1{
-        width: 16px;
+        width: 5%;
         top: 124%;
         left: 0%;
     }
 
     .coin-2{
-        width: 32px;
         bottom: -25%;
     }
 
     .star-2{
-        width: 14px;
+        width: 5%;
         bottom: -25%;
     }
 
     .coin-3{
-        width: 48px;
+        width: 20%;
         top: -20%;
-        right: 90%;
+        right: 80%;
     }
 
     .star-3{
-        width: 16px;
+        width: 7%;
         top: -20%;
         right: 90%;
     }
@@ -404,7 +424,7 @@ button:hover{
     background-image: url(../images/Banner/Snake.png);
     width: 100vw;
     height: 100vh;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     position: absolute;
     bottom: 0;
@@ -436,8 +456,8 @@ button:hover{
 
 .Head{
     background-image: url(../images/Banner/Head_360.png);
-    width: 40vw;
-    height:30vh;
+    width: 50vw;
+    height:50vh;
     background-position: top right;
     background-size: contain;
     background-repeat: no-repeat;
@@ -460,6 +480,33 @@ button:hover{
     display: none;
 }
 
+
+
+@media (max-width: 1439px) {
+
+    .KeyPoint{
+        transform: translate(-50%, -45%);
+    }
+
+    .Head,.Tail{
+        display: block;
+    }
+
+    .Head{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .Tail{
+        width: 55vw;
+        height: 55vw;
+    }
+
+    .Snake{
+        display: none;
+    }
+}
+
 @media (max-width: 1023px) {
 
     .Banner{
@@ -467,19 +514,14 @@ button:hover{
         margin-top: 72px;
     }
 
+    .KeyPoint{
+        max-width: 740px;
+        transform: translate(-50%, -40%);
+    }
 
     .BannerBG{
         height: 95vh;
     }
-
-    .Snake{
-        display: none;
-    }
-
-    .Head,.Tail{
-        display: block;
-    }
-
 }
 
 @media (max-width: 767px) {
@@ -504,11 +546,20 @@ button:hover{
 
 
     .KeyPoint{
-        top: 45%;
+        max-width: 480px;
+        transform: translate(-50%, -40%);
         gap: 16px;
     }
     
+    .Head{
+        width: 40vw;
+        height: 30vh;
+    }
 
+    .Tail{
+        width: 40vw;
+        height: 40vh;
+    }
    
 
 }
