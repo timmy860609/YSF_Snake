@@ -103,8 +103,8 @@ img {
     position: absolute;
     top: 10%; 
     left: 0; 
-    width: 15vw;
-    height: 30vw; 
+    width: 12vw;
+    height: 24vw; 
     background-image: url(../images/illustration/Element1.png);
     background-position: top left;
     background-size: contain;
