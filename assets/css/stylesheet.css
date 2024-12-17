@@ -70,6 +70,7 @@ button:hover{
     font-size: 18px;
     transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
     text-align: center;
+    padding-top: 26px;
 }
 
 
@@ -95,6 +96,13 @@ button:hover{
     gap: 16px;
     z-index: 100;
 }
+
+.Sale{
+    width: 76px;
+    height: auto;
+    margin: 0 auto;
+}
+
 
 @media (max-width: 767px) {
     

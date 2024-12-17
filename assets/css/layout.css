@@ -47,12 +47,23 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.CoinBlock{
+    position: absolute;
+    z-index: 1;
+    width: 800px;
+    height: 540px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .coin-1{
     position: absolute;
     z-index: 1;
-    width: 22%;
-    top: 18%;
-    left: 6%;
+    width: 69px;
+    top: -15%;
+    left: -10%;
     transform: translateY(0%);
     animation: coin-1 2.5s infinite;
 }
@@ -60,9 +71,9 @@ table {
 .coin-2{
     position: absolute;
     z-index: 1;
-    width: 22%;
-    bottom: 10%;
-    left: 2%;
+    width: 60px;
+    bottom: 50%;
+    left: -15%;
     transform: translateY(0%);
     animation: coin-2 2s infinite;
 }
@@ -70,9 +81,9 @@ table {
 .coin-3{
     position: absolute;
     z-index: 1;
-    width: 18%;
-    top: 8%;
-    right: 10%;
+    width: 76px;
+    top: -15%;
+    right: -10%;
     transform: translateY(0%);
     animation: coin-3 2s infinite;
 }
@@ -80,26 +91,108 @@ table {
 .star-1{
     position: absolute;
     z-index: 1;
-    width: 52px;
-    top: 24px;
+    width: 30px;
+    top: -15%;
     left: -32px;
     animation: twinkle 1s infinite ease-in-out;
 }
 
 .star-2{
     position: absolute;
-    z-index: -1;
-    width: 32px;
-    right: 0%;
-    bottom: 30%;
+    z-index: 1;
+    width: 30px;
+    left: -11%;
+    bottom: 52%;
     animation: twinkle 1s infinite ease-in-out;
     animation-delay: 1.5s;
 }
 
-@keyframes floater {
-    0%{transform: translateY(0px);transition: ease 3s;}
-    50%{transform: translateY(16px);transition: ease 3s;}
-  }
+.star-3{
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    right: -10%;
+    top: -15%;
+    animation: twinkle 1.5s infinite ease-in-out;
+    animation-delay: 1s;
+}
+
+@media (max-width: 1023px) {
+
+    .CoinBlock{
+        width: 90%;
+        height: 540px;
+    }
+    .coin-1{
+        top: 110%;
+        left: 10%;
+    }
+    .star-1{
+        top: 108%;
+        left: 15%;
+    }
+
+    .coin-2{
+        bottom: -5%;
+        left: 90%;
+    }
+    .star-2{
+        bottom: -3%;
+        left: 95%;
+    }
+
+    .coin-3{
+        right: 90%;
+        top: -20%;
+    }
+
+    .star-3{
+        right: 95%;
+        top: -20%;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .CoinBlock{
+        width: 90%;
+        height: 280px;
+    }
+    .coin-1{
+        width: 32px;
+        top: 130%;
+        left: 0%;
+    }
+    .star-1{
+        width: 16px;
+        top: 124%;
+        left: 0%;
+    }
+
+    .coin-2{
+        width: 32px;
+        bottom: -25%;
+    }
+
+    .star-2{
+        width: 14px;
+        bottom: -25%;
+    }
+
+    .coin-3{
+        width: 48px;
+        top: -35%;
+        right: 90%;
+    }
+
+    .star-3{
+        width: 16px;
+        top: -35%;
+        right: 90%;
+    }
+}
+
   @keyframes coin-1 {
     0%{transform: translateY(0px);transition: ease 3s;}
     50%{transform: translateY(-20px);transition: ease 3s;}
@@ -110,7 +203,7 @@ table {
   }
   @keyframes coin-3 {
     0%{transform: translateY(0%);transition: ease 3s;}
-    50%{transform: translateY(-35%);transition: ease 3s;}
+    50%{transform: translateY(-24px);transition: ease 3s;}
   }
   @keyframes twinkle {
     0%, 100% {
@@ -121,17 +214,8 @@ table {
         opacity: 1;
         transform: scale(1.5);
     }
-}
-    @keyframes twinkle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.2;
-            transform: scale(1.5);
-        }
     }
+    
     @keyframes shadow {
         0% {transform: scale(1);filter: blur(8px);}
         100% {transform: scale(.8);filter: blur(2px);}
@@ -252,6 +336,7 @@ table {
 
     .Banner{
         height: 80vh;
+        margin-top: 58px;
     }
 
     .BannerBG{
