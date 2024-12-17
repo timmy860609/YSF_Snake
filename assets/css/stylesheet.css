@@ -109,13 +109,11 @@ button:hover{
     .FloatButton1,.FloatButton2 {
         width: 100%;
         height: auto;
-        flex-direction: row;
         text-align: center;
         justify-content: center;
-        padding: 20px 0px;
+        padding: 8px 0px;
         border-radius: 0px;
         font-size: 18px;
-        gap: 8px;
         background-image: none;
         background-color: #EA6F17;
        
@@ -125,9 +123,7 @@ button:hover{
         background-color: #F0A400;
     }
 
-    .FloatButton1 br,.FloatButton2 br{
-        display: none;
-    }
+   
     
     .FloatButton1:hover,.FloatButton2:hover,button:hover{
         transform: none;
