@@ -29,34 +29,40 @@ $(function() {
     })
 });
 
-//翻牌&星星閃爍
-function flipCard(event) {
-    event.preventDefault();
-    const cardContainer = event.currentTarget;
-    const sparkleContainer = cardContainer.querySelector('.sparkle-container');
+// popup
+document.addEventListener("DOMContentLoaded", () => {
+    const openPopupBtn = document.getElementById("openPopup");
+    const closePopupBtn = document.getElementById("closePopup");
+    const popupOverlay = document.getElementById("popupOverlay");
 
-    cardContainer.classList.toggle('flip');
-
-    sparkleContainer.innerHTML = '';
-
-    for (let i = 0; i < 10; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
-
-        // 使用相近的顏色
-        const colors = ['#054C94', '#0B4E8D', '#0F6EAA', '#EA6F17', '#EA8C3B', '#FFB600'];
-        sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
-        sparkle.style.top = '50%';
-        sparkle.style.left = '50%';
-        sparkle.style.transform = 'translate(-50%, -50%)';
-
-        const randomX = (Math.random() - 0.5) * 300;
-        const randomY = (Math.random() - 0.5) * 300; 
-
-        sparkle.style.setProperty('--translateX', `${randomX}px`);
-        sparkle.style.setProperty('--translateY', `${randomY}px`);
-
-        sparkleContainer.appendChild(sparkle);
+    // 禁止背景滑動
+    function disableScroll() {
+        document.body.style.overflow = "hidden";
     }
-}
+
+    // 恢復背景滑動
+    function enableScroll() {
+        document.body.style.overflow = "auto";
+    }
+
+    // 打開 Popup
+    openPopupBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        popupOverlay.style.display = "block";
+        disableScroll();
+    });
+
+    // 關閉 Popup
+    closePopupBtn.addEventListener("click", () => {
+        popupOverlay.style.display = "none";
+        enableScroll();
+    });
+
+    // 點擊遮罩關閉 Popup
+    popupOverlay.addEventListener("click", (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            enableScroll();
+        }
+    });
+});

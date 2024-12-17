@@ -31,7 +31,6 @@
 
         <link rel="stylesheet" href="./assets/css/aos-master/dist/aos.css">
         <link href="assets/css/common.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/layout.css">
         <link rel="stylesheet" href="./assets/css/stylesheet.css">
         <link rel="stylesheet" href="./assets/css/font.css">
         <script type="text/javascript" src="assets/js/lib/jquery-3.6.0.min.js"></script>
@@ -71,6 +70,7 @@
 			
 			<!-- 內容區 -->
             <div class="Banner"> 
+                <div class="SmokeEffect"></div>
                 <div class="BannerBG"></div>
                 <div class="Cloud"></div>
                 <div class="Snake"></div>
@@ -82,7 +82,7 @@
                         <img src="./assets/images/Banner/SubTitle.png" alt="">
                     </div>
                     <a href="#" class="MainButton">
-                        <button>
+                        <button id="openPopup">
                             <img src="./assets/images/illustration/ElementForBtn.png" alt="" class="BtnElementLeft">
                                <h3>點我看優惠利率</h3> 
                             <img src="./assets/images/illustration/ElementForBtn.png" alt=""  class="BtnElementRight">
@@ -100,6 +100,17 @@
                     <div class="star-3"><img src="./assets/images/Banner/Star.png" alt=""></div>
                 </div>
             </div>
+
+
+            <!-- Popup -->
+            <div class="popup-overlay" id="popupOverlay">
+                <div class="popup">
+                    <button class="close-btn" id="closePopup">&times;</button>
+                    <h2>優惠利率 5.0%</h2>
+                    <p>感謝您的參與！快來享受我們的優惠吧！</p>
+                </div>
+            </div>
+
 
             <div class="Element1">
                 <div class="Section">
@@ -179,10 +190,16 @@
             </div>
             <div class="Element2">
                 <div class="Section">
+                    <div class="ElementCoinBlock">
+                        <div class="ElementCoin1" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin3.png" alt=""></div>
+                        <div class="ElementCoin2" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin1.png" alt=""></div>
+                        <div class="ElementCoin3" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin2.png" alt=""></div>
+                        <div class="ElementCoin4" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin4.png" alt=""></div>
+                    </div>
                     <div class="TextLine" data-aos="fade-up" data-aos-duration="1000">
                         <img src="./assets/images/Text/Title2.png" alt="">
                     </div>
-                    <p class="SubTitle" data-aos="fade-up" data-aos-duration="1000">活動期間內持以下專案標的至本公司辦理借款，單日累計借款金額達新台幣 1 萬(含以上)即享借款優惠利率，詳情請見 <a href="#">注意事項</a></p>
+                    <p class="SubTitle" data-aos="fade-up" data-aos-duration="1000">活動期間內持以下專案標的至本公司辦理借款，單日累計借款金額達新台幣 1 萬(含以上)即享借款優惠利率，詳情請見<a href="#NoticeList" class="Notice">注意事項<img src="./assets/images/side/angle-double-small-left_outline (1).png" alt=""></a>。</p>
 
                     <div class="OutLineCard">
                         <div class="ETF" data-aos="fade-up" data-aos-duration="1000">
@@ -238,12 +255,7 @@
                             
                     </div>
                 </div>
-                <div class="ElementCoinBlock">
-                    <div class="ElementCoin1" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin3.png" alt=""></div>
-                    <div class="ElementCoin2" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin1.png" alt=""></div>
-                    <div class="ElementCoin3" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin2.png" alt=""></div>
-                    <div class="ElementCoin4" data-aos="fade-down" data-aos-duration="1000"><img src="./assets/images/illustration/Coin4.png" alt=""></div>
-                </div>
+                
             </div>
 
             <div class="Element3">
@@ -278,7 +290,7 @@
                                         <div class="Step">Step 1</div>
                                         <p>免上傳銀行存摺/財力證明</p>
                                     </div>
-                                    <a href="#" class="MainButton">
+                                    <a href="#" class="MainButton" target="_blank">
                                         <button>
                                         <img src="./assets/images/illustration/ElementForBtn.png" alt="" class="BtnElementLeft">
                                         五分鐘快速線上開戶
@@ -320,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="Element4">
+            <div class="Element4" id="NoticeList">
                 <div class="Section">
                     <div class="TextLine" data-aos="fade-up" data-aos-duration="1000">
                         <img src="./assets/images/Text/Title4.png" alt="">
@@ -333,7 +345,7 @@
                                 <Br>2025 年 1 月 1 日起至 12 月 31 日(即於該期間申請之借款，得以優惠利率計息至 2025 年 12 月 31 日止)。</Br>
                             </li>
                             <li>
-                                優惠利率：<a href="">點我看優惠利率</a>。
+                                優惠利率：<a href="https://www.yuantafinance.com.tw/" target="_blank">點我看優惠利率</a>。
                             </li>
                             <li>
                                 專案對象：限於專案期間線上完成借款申請者。
@@ -363,10 +375,10 @@
                                 本公司保有隨時變更活動辦法，以及暫停、延長、提前終止本活動之權利，若有未盡詳細事宜，本公司得隨時修訂公佈，修改訊息將於本公司網站上公佈，不另行通知。本公司就活動內容得依實際狀況斟酌調整，並保有對活動規則之解釋權利。
                             </li>
                             <li>
-                                有關本公司有價證券擔保放款業務說明，詳見本公司<a href="">官方網站</a>。
+                                有關本公司有價證券擔保放款業務說明，詳見本公司<a href="https://www.yuantafinance.com.tw/" target="_blank">官方網站</a>。
                             </li>
                             <li>
-                                凡透過本公司「 iMoney APP 」進行申請借款、還款等作業，詳見本公司官方網頁之<a href="">操作說明</a>。
+                                凡透過本公司「 iMoney APP 」進行申請借款、還款等作業，詳見本公司官方網頁之<a href="https://www.yuantafinance.com.tw/" target="_blank">操作說明</a>。
                             </li>
                             <li>
                                 參加本專案借款期間跨年度者，如符合 2026 年度專案標的者，借款人同意本公司自動銜接並適用 2026 年度專案活動內容(本公司將於 2025 年 12 月預告 2026 年度專案活動優惠利率)；如不同意參與 2026 年度專案活動，請借款人於 2025 年 12 月 31 日(含)前完成清償借款。
@@ -394,7 +406,7 @@
                             <div class="appDownload-QRcode">
                                 <img src="assets/images/app/QRcode.png" alt="QRcode">
                             </div>
-                            <a href="#" class="MainButton">
+                            <a href="#" class="MainButton" target="_blank">
                                 <button>
                                 <img src="./assets/images/illustration/ElementForBtn.png" alt="" class="BtnElementLeft">
                                 五分鐘快速線上開戶
