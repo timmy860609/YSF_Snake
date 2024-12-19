@@ -202,22 +202,13 @@ button:hover{
 /* --------------- Banner ---------------*/
 
 
-.CoinBlock{
-    position: absolute;
-    z-index: 1;
-    width: 800px;
-    height: 540px;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .coin-1{
     position: absolute;
     z-index: 1;
     width: 69px;
-    top: -15%;
-    left: -10%;
+    top: -10%;
+    left: 0%;
     transform: translateY(0%);
     animation: coin-1 2.5s infinite;
 }
@@ -226,8 +217,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 60px;
-    bottom: 50%;
-    left: -15%;
+    bottom: 40%;
+    left: 0%;
     transform: translateY(0%);
     animation: coin-2 2s infinite;
 }
@@ -236,8 +227,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 76px;
-    top: -15%;
-    right: -10%;
+    top: -10%;
+    right: 0%;
     transform: translateY(0%);
     animation: coin-3 2s infinite;
 }
@@ -246,8 +237,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 30px;
-    top: -15%;
-    left: -32px;
+    top: -10%;
+    left: 0%;
     animation: twinkle 1s infinite ease-in-out;
 }
 
@@ -255,8 +246,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 30px;
-    left: -11%;
-    bottom: 52%;
+    left: 0%;
+    bottom: 40%;
     animation: twinkle 1s infinite ease-in-out;
     animation-delay: 1.5s;
 }
@@ -265,52 +256,63 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 30px;
-    right: -10%;
-    top: -15%;
+    top: -10%;
+    right: 0%;
     animation: twinkle 1.5s infinite ease-in-out;
     animation-delay: 1s;
 }
 
 @media (max-width: 1439px) {
-    .coin-1{
-        top: 110%;
-        left: 10%;
-    }
-    .star-1{
-        top: 108%;
-        left: 15%;
+
+    .KvTitle,.SecondaryTitle{
+        width: 100%;
     }
 
+    .coin-1{
+        top: 80%;
+        left: 0%;
+    }
+   
     .star-1{
-        top: 108%;
-        left: 15%;
+        top: 80%;
+        left: 0%;
     }
 
     .coin-2{
         bottom: -5%;
-        left: 90%;
+        left: 85%;
     }
     .star-2{
-        bottom: -3%;
-        left: 95%;
+        bottom: -5%;
+        left: 85%;
     }
 
     .coin-3{
+        width: 8%;
         right: 90%;
-        top: -15%;
+        top: 0%;
     }
 
     .star-3{
-        right: 95%;
-        top: -15%;
+        right: 90%;
+        top: 0%;
     }
 }
 
 @media (max-width: 1023px) {
 
+    .coin-1{
+        top: 95%;
+        left: 12%;
+    }
+   
+    .star-1{
+        top: 95%;
+        left: 12%;
+    }
 
     .coin-2{
-        width: 12%;
+        width: 8%;
         left: 80%;
     }
 
@@ -319,30 +321,26 @@ button:hover{
     }
 
     .coin-3{
-        right: 85%;
+        right: 90%;
     }
 
     .star-3{
-        right: 85%;
+        right: 90%;
     }
 
 }
 
 @media (max-width: 767px) {
 
-    .CoinBlock{
-        width: 90%;
-        height: 45%;
-    }
     .coin-1{
-        width: 15%;
-        top: 130%;
-        left: 0%;
+        width: 10%;
+        top: 100%;
+        left: 10%;
     }
     .star-1{
-        width: 5%;
-        top: 124%;
-        left: 0%;
+        width: 4%;
+        top: 100%;
+        left: 10%;
     }
 
     .coin-2{
@@ -355,15 +353,15 @@ button:hover{
     }
 
     .coin-3{
-        width: 14%;
+        width: 10%;
         top: -20%;
-        right: 80%;
+        right: 85%;
     }
 
     .star-3{
         width: 4%;
         top: -20%;
-        right: 90%;
+        right: 85%;
     }
 }
 
@@ -432,7 +430,7 @@ button:hover{
 }
 
 .KeyPoint{
-    width: 100%;
+    width:1024px ;
     display: flex;
     gap: 24px;
     flex-direction: column;
@@ -445,12 +443,12 @@ button:hover{
 }
 
 .KvTitle{
-    max-width: 800px;
+    width: 80%;
     margin: 0 auto;
 }
 
 .SecondaryTitle{
-    max-width: 600px;
+    width: 80%;;
     margin: 0 auto;
 }
 
@@ -485,7 +483,6 @@ button:hover{
 @media (max-width: 1439px) {
 
     .KeyPoint{
-        transform: translate(-50%, -45%);
     }
 
     .Head,.Tail{
@@ -510,12 +507,12 @@ button:hover{
 @media (max-width: 1023px) {
 
     .Banner{
-        height: 95vh;
+        height: 100vh;
         margin-top: 72px;
     }
 
     .KeyPoint{
-        max-width: 740px;
+        width: 100%;
         transform: translate(-50%, -40%);
     }
 
@@ -523,6 +520,7 @@ button:hover{
         height: 95vh;
     }
 }
+
 
 @media (max-width: 767px) {
 
@@ -546,9 +544,10 @@ button:hover{
 
 
     .KeyPoint{
-        max-width: 480px;
+        width: 100%;;
         transform: translate(-50%, -40%);
         gap: 16px;
+        min-width: 0;
     }
     
     .Head{
@@ -560,8 +559,11 @@ button:hover{
         width: 40vw;
         height: 40vh;
     }
-   
 
+    .KvTitle,.SecondaryTitle{
+        width: 100%;
+    }
+   
 }
 
 
@@ -824,16 +826,23 @@ button:hover{
 
 .StockTable{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 20px;
 }
 
 .StockItem{
+    display: flex;
+    justify-content: left;
+    padding-left: 12px;
+    gap: 8px;
     text-align: center;
     box-sizing: border-box;
     padding-bottom: 12px;
     border-bottom: 1px solid #E9E9E9;
+}
 
+.StockName{
+    white-space: nowrap;
 }
 
 .StockBlock{
@@ -878,8 +887,18 @@ button:hover{
         margin-bottom: 32px;
     }
 
+    
+
     .StockTable{
-        gap: 10px;
+        gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .StockItem{
+        justify-content: center;
+        padding-left: 0;
+        flex-direction: column;
+        gap: 0;
     }
 
     .ETF,.Stock{
@@ -1001,6 +1020,7 @@ button:hover{
 
     .SnakeLeft,.SnakeRight{
         flex-direction: column;
+        gap: 0;
     }
     
     .SnakeRight{
@@ -1013,6 +1033,7 @@ button:hover{
         margin: 0 64px;
     }
 
+    
 
     .SnakeRight img{
         order: -1;
@@ -1058,7 +1079,7 @@ button:hover{
     }
 
     .MainButton{
-        width: 240px;
+        width: 220px;
     }
 
     .Chat{
