@@ -839,6 +839,8 @@ button:hover{
     box-sizing: border-box;
     padding-bottom: 12px;
     border-bottom: 1px solid #E9E9E9;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .StockName{
@@ -927,6 +929,7 @@ button:hover{
         width: 100%;
     }
 
+ 
 }
 
     
