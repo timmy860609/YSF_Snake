@@ -24,8 +24,7 @@ body{
 }
 
 html {
-    scroll-behavior: smooth; /* 啟用平滑滾動效果 */
-    overflow-x: hidden;
+    scroll-behavior: smooth; 
 }
 
 .clearboth {
