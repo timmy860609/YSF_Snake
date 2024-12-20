@@ -811,6 +811,40 @@ button:hover{
     transform: translateX(-50%);
 }
 
+.ETFTable{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    padding: 60px 24px 24px 24px;
+}
+.ETFItem{
+    display: flex;
+    justify-content: left;
+    gap: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E9E9E9;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ETFBlock img{
+    position: absolute;
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+    top: -39px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ETFBlock{
+    position: relative;
+    border: 2px solid #E8AD4F;
+    border-radius: 10px;
+}
+
 .Stock{
     position: relative;
     padding: 62px 16px 40px 16px ;
@@ -820,19 +854,26 @@ button:hover{
 }
 
 
+
 .ETF p,.ETF span {
     font-weight: 500;
 }
 
 .StockTable{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.ETFTable{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
 }
 
 .StockItem{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding-left: 12px;
     gap: 8px;
     text-align: center;
@@ -843,7 +884,20 @@ button:hover{
     font-weight: 500;
 }
 
-.StockName{
+.ETFItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E9E9E9;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.StockName ,.ETFName{
     white-space: nowrap;
 }
 
@@ -877,6 +931,18 @@ button:hover{
     transform: translateX(-50%);
 }
 
+@media (max-width: 1023px) {
+    .ETFBlock img{
+        width: 224px;
+        top: -25px;
+    }
+
+    .ETFTable{
+        padding: 32px 12px 24px 12px;
+        gap: 12px;
+    }
+
+}
 
 @media (max-width: 767px) {
 
@@ -889,14 +955,17 @@ button:hover{
         margin-bottom: 32px;
     }
 
-    
+    .ETFBlock img{
+        width: 180px;
+        top: -20px;
+    }
 
     .StockTable{
         gap: 20px;
         grid-template-columns: repeat(2,1fr);
     }
 
-    .StockItem{
+    .StockItem,.ETFItem{
         justify-content: center;
         padding-left: 0;
         flex-direction: column;
@@ -929,7 +998,13 @@ button:hover{
         width: 100%;
     }
 
- 
+    .ETFTable{
+        padding-top: 40px;
+        gap: 8px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
 }
 
     
@@ -1157,4 +1232,11 @@ button:hover{
     .NoteCard{
         padding: 32px 24px;
     }
+}
+
+
+.ETFs{
+    background-color: #F0A400;
+    color: white;
+    border: none;
 }

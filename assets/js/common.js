@@ -66,3 +66,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const openPopupLink = document.getElementById("openPopupLink");
+    const closePopupLink = document.getElementById("closePopup2"); // 確保選擇器正確
+    const popupOverlayLink = document.getElementById("popupOverlayLink");
+
+    // 禁止背景滑動
+    function disableScroll() {
+        document.body.style.overflow = "hidden";
+    }
+
+    // 恢復背景滑動
+    function enableScroll() {
+        document.body.style.overflow = "auto";
+    }
+
+    // 打開彈窗
+    openPopupLink.addEventListener("click", (e) => {
+        e.preventDefault(); // 防止跳轉
+        popupOverlayLink.style.display = "block";
+        disableScroll();
+    });
+
+    // 關閉彈窗
+    closePopupLink.addEventListener("click", () => {
+        popupOverlayLink.style.display = "none";
+        enableScroll();
+    });
+
+    // 點擊遮罩關閉彈窗
+    popupOverlayLink.addEventListener("click", (e) => {
+        if (e.target === popupOverlayLink) {
+            popupOverlayLink.style.display = "none";
+            enableScroll();
+        }
+    });
+});
+
+

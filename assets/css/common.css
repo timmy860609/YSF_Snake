@@ -25,6 +25,7 @@ body{
 
 html {
     scroll-behavior: smooth; /* 啟用平滑滾動效果 */
+    overflow-x: hidden;
 }
 
 .clearboth {
@@ -497,13 +498,14 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     overflow: hidden;
 }
 
 .popup {
-    width: 40%;
+    width: 600px;
+    max-height: 75vh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -511,7 +513,10 @@ html {
     text-align: center;
     z-index: 100;
     animation: slide-in 0.5s ease-out;
+    overflow-y: auto; /* 當內容過多時，允許 Y 軸滾動 */
 }
+
+
 
 .popup h2 {
     margin-bottom: 12px;
@@ -570,6 +575,19 @@ html {
     border-left: 24px solid #B30003;
 }
 
+.OverBody2{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF3EB;
+    padding: 64px 12px 24px 12px;
+    border-right: 24px solid #B30003;
+    border-left: 24px solid #B30003;
+}
+
+
 /* 動畫效果 */
 @keyframes slide-in {
     0% {
@@ -588,11 +606,17 @@ html {
 }
 @media (max-width: 767px) {
     .popup{
-        width: 80%;
+        width: 90%;
     }
 
-    .OverBody{
+    .OverBody,.OverBody2{
         border-right: 16px solid #B30003;
         border-left: 16px solid #B30003;
+    }
+}
+
+@media (max-width: 767px) {
+    .Rate h1{
+        padding: 24px;
     }
 }
