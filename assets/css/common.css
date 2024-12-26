@@ -504,7 +504,7 @@ html {
 
 .popup {
     width: 600px;
-    max-height: 75vh;
+    max-height: 66.7vh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -562,7 +562,7 @@ html {
     background-color: white;
 }
 
-.OverBody{
+.OverBody,.OverBody2{
     position: relative;
     margin: 0 auto;
     width: 90%;
@@ -575,16 +575,10 @@ html {
 }
 
 .OverBody2{
-    position: relative;
-    margin: 0 auto;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFF3EB;
     padding: 64px 12px 24px 12px;
-    border-right: 24px solid #B30003;
-    border-left: 24px solid #B30003;
+    overflow-y: hidden;
 }
+
 
 
 /* 動畫效果 */
@@ -618,4 +612,47 @@ html {
     .Rate h1{
         padding: 24px;
     }
+}
+
+
+/* --------------- Tooltip ---------------*/
+.tooltip-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 120%; /* Tooltip 出現在文字上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+    font-size: 16px;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* 點擊時顯示 Tooltip */
+.tooltip-trigger.active .tooltip {
+    visibility: visible;
+    opacity: 1;
 }

@@ -69,6 +69,7 @@ button{
     transition: all 600ms cubic-bezier(.23, 1, 0.32, 1);
     box-shadow: 0px 4px 0px 0px #272727;
     white-space: nowrap;
+    font-weight: 700;
 }
 
 button:hover{
@@ -640,11 +641,24 @@ button:hover{
 
 /* -----RodElement----- */
 
-.Rod{
+.RodTop{
+    position: sticky;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 0;
+    z-index: 10000;
+}
+
+.RodBottom{
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    z-index: 10000;
 }
 
 .Center{
@@ -816,6 +830,8 @@ button:hover{
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 16px;
     padding: 60px 24px 24px 24px;
+    background-color: white;
+    border-radius: 10px;
 }
 .ETFItem{
     display: flex;
@@ -854,6 +870,13 @@ button:hover{
 }
 
 
+.ETF p{
+    font-size: 28px;
+}
+
+.ETF span{
+    font-size: 18px;
+}
 
 .ETF p,.ETF span {
     font-weight: 500;

@@ -29,81 +29,79 @@ $(function() {
     })
 });
 
+
+
 // popup
 document.addEventListener("DOMContentLoaded", () => {
-    const openPopupBtn = document.getElementById("openPopup");
-    const closePopupBtn = document.getElementById("closePopup");
-    const popupOverlay = document.getElementById("popupOverlay");
-
-    // 禁止背景滑動
+    // 公共方法：禁止背景滑動
     function disableScroll() {
         document.body.style.overflow = "hidden";
     }
 
-    // 恢復背景滑動
+    // 公共方法：恢復背景滑動
     function enableScroll() {
         document.body.style.overflow = "auto";
     }
 
-    // 打開 Popup
-    openPopupBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        popupOverlay.style.display = "block";
-        disableScroll();
-    });
+    // 公共方法：初始化彈窗
+    function initPopup(openBtnId, closeBtnId, overlayId) {
+        const openBtn = document.getElementById(openBtnId);
+        const closeBtn = document.getElementById(closeBtnId);
+        const overlay = document.getElementById(overlayId);
 
-    // 關閉 Popup
-    closePopupBtn.addEventListener("click", () => {
-        popupOverlay.style.display = "none";
-        enableScroll();
-    });
-
-    // 點擊遮罩關閉 Popup
-    popupOverlay.addEventListener("click", (e) => {
-        if (e.target === popupOverlay) {
-            popupOverlay.style.display = "none";
-            enableScroll();
+        if (!openBtn || !closeBtn || !overlay) {
+            console.error(`Missing elements for popup: ${openBtnId}, ${closeBtnId}, ${overlayId}`);
+            return;
         }
-    });
+
+        // 打開彈窗
+        openBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // 防止默認行為
+            overlay.style.display = "block";
+            disableScroll();
+        });
+
+        // 關閉彈窗
+        closeBtn.addEventListener("click", () => {
+            overlay.style.display = "none";
+            enableScroll();
+        });
+
+        // 點擊遮罩區域關閉彈窗
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                overlay.style.display = "none";
+                enableScroll();
+            }
+        });
+    }
+
+    // 初始化多個彈窗
+    initPopup("openPopup", "closePopup", "popupOverlay"); // 第一個彈窗
+    initPopup("openPopupLink", "closePopup2", "popupOverlayLink"); // 第二個彈窗
 });
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const openPopupLink = document.getElementById("openPopupLink");
-    const closePopupLink = document.getElementById("closePopup2"); // 確保選擇器正確
-    const popupOverlayLink = document.getElementById("popupOverlayLink");
 
-    // 禁止背景滑動
-    function disableScroll() {
-        document.body.style.overflow = "hidden";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
 
-    // 恢復背景滑動
-    function enableScroll() {
-        document.body.style.overflow = "auto";
-    }
+    tooltipTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault(); // 阻止 <a> 的預設跳轉行為
 
-    // 打開彈窗
-    openPopupLink.addEventListener("click", (e) => {
-        e.preventDefault(); // 防止跳轉
-        popupOverlayLink.style.display = "block";
-        disableScroll();
+            // 切換 active 狀態
+            trigger.classList.toggle('active');
+        });
     });
 
-    // 關閉彈窗
-    closePopupLink.addEventListener("click", () => {
-        popupOverlayLink.style.display = "none";
-        enableScroll();
-    });
-
-    // 點擊遮罩關閉彈窗
-    popupOverlayLink.addEventListener("click", (e) => {
-        if (e.target === popupOverlayLink) {
-            popupOverlayLink.style.display = "none";
-            enableScroll();
-        }
+    // 點擊其他地方隱藏 Tooltip
+    document.addEventListener('click', (e) => {
+        tooltipTriggers.forEach(trigger => {
+            if (!trigger.contains(e.target)) {
+                trigger.classList.remove('active');
+            }
+        });
     });
 });
-
-
