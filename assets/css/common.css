@@ -41,6 +41,12 @@ html {
     font-weight: 400;
 }
 
+/* -----------Color------------ */
+.Bright{
+    color: #DC4F45;
+    font-weight: 700;
+}
+
 
 .header {
     width: 100%;
@@ -576,7 +582,6 @@ html {
 
 .OverBody2{
     padding: 64px 12px 24px 12px;
-    overflow-y: hidden;
 }
 
 

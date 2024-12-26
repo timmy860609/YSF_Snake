@@ -896,7 +896,7 @@ button:hover{
 
 .StockItem{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding-left: 12px;
     gap: 8px;
     text-align: center;
@@ -1027,7 +1027,13 @@ button:hover{
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .ETF p{
+        font-size: 24px;
+    }
     
+    .ETF span{
+        font-size: 16px;
+    }
 }
 
     
