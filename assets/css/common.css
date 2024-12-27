@@ -265,12 +265,18 @@ html {
     .ElementCoinBlock{
         display: none;
     }
+    .Element4::after{
+       top: 5%;
+    }
 }
 
 @media (max-width: 1024px) {
     .Item{
         flex-direction: column;
     }
+    .Element4::after{
+        top: 8%;
+     }
 }
 
 @media (max-width: 767px) {
@@ -561,7 +567,7 @@ html {
 }
 
 .Rate h1{
-    font-size: 48px;
+    font-size: 60px;
     padding: 40px;
     border: 2px solid #E8AD4F;
     border-radius: 10px;
@@ -600,6 +606,10 @@ html {
 @media (max-width: 1023px) {
     .popup{
         width: 60%;
+    }
+
+    .Rate h1{
+        font-size: 48px;
     }
 }
 @media (max-width: 767px) {
@@ -660,4 +670,8 @@ html {
 .tooltip-trigger.active .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+#openPopupLink{
+    text-decoration: underline;
 }
