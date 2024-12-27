@@ -202,7 +202,11 @@ button:hover{
 
 /* --------------- Banner ---------------*/
 
-
+.KvSale{
+    width: 146px;
+    position: absolute;
+    top: -60px;
+}
 
 .coin-1{
     position: absolute;
@@ -212,6 +216,7 @@ button:hover{
     left: 0%;
     transform: translateY(0%);
     animation: coin-1 2.5s infinite;
+    display: none;
 }
 
 .coin-2{
@@ -241,6 +246,7 @@ button:hover{
     top: -10%;
     left: 0%;
     animation: twinkle 1s infinite ease-in-out;
+    display: none;
 }
 
 .star-2{
@@ -272,11 +278,13 @@ button:hover{
     .coin-1{
         top: 80%;
         left: 0%;
+        display: block;
     }
    
     .star-1{
         top: 80%;
         left: 0%;
+        display: block;
     }
 
     .coin-2{
@@ -292,11 +300,18 @@ button:hover{
         width: 8%;
         right: 90%;
         top: 0%;
+        display: none;
     }
 
     .star-3{
         right: 90%;
         top: 0%;
+        display: none;
+    }
+
+    .KvSale{
+        top: -50px;
+        width: 120px;
     }
 }
 
@@ -364,6 +379,13 @@ button:hover{
         top: -20%;
         right: 85%;
     }
+
+    .KvSale{
+        top: -100px;
+        width: 20%;
+        min-width:60px ;
+    }
+
 }
 
   @keyframes coin-1 {
@@ -438,7 +460,7 @@ button:hover{
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     padding: 0 24px;
     z-index: 10;
 }
