@@ -444,7 +444,7 @@ button:hover{
 .Snake{
     background-image: url(../images/Banner/Snake.png);
     width: 100%;
-    height: 890px;
+    height: 100%;
     background-position: center center;
     background-size: cover;
     position: absolute;
