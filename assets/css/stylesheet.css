@@ -458,7 +458,8 @@ button:hover{
     position: absolute;
     top: 120px;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%,-60%);
     padding: 0 24px;
     z-index: 10;
 }
@@ -522,23 +523,24 @@ button:hover{
     }
 
     .KeyPoint{
-        top: 80px;
+        width: 80%;
+        transform: translate(-50%,-50%);
     }
 }
 
 @media (max-width: 1023px) {
 
     .Banner{
-        height: 100vh;
+        height: 80vh;
         margin-top: 72px;
     }
 
     .KeyPoint{
-        width: 80%;
+        
     }
 
     .BannerBG{
-        height: 95vh;
+        height: 80vh;
     }
 }
 
@@ -546,7 +548,6 @@ button:hover{
 @media (max-width: 767px) {
 
     .Banner{
-        height: 80vh;
         margin-top: 58px;
     }
 
@@ -567,7 +568,7 @@ button:hover{
     .KeyPoint{
         width: 100%;
         gap: 16px;
-        top: 120px;
+        transform: translate(-50%,-60%);
     }
     
     .Head{
