@@ -381,8 +381,8 @@ button:hover{
     }
 
     .KvSale{
-        top: -70px;
-        width: 64px;
+        top: -80px;
+        width: 72px;
     }
 
 }
@@ -1208,6 +1208,7 @@ button:hover{
 
     .MainButton{
         width: 220px;
+        font-size: 18px;
     }
 
     .Chat{
