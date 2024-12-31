@@ -1,102 +1,95 @@
-
-// gotop
 "use strict";
+
+
 $(function() {
-    function a() {
-        $(".faqCont .faqQuestion").removeClass("active"),
-        $(".faqCont .faqAnswer").slideUp(300)
-    }
+   
     $(window).on("scroll", function() {
-        100 < $(window).scrollTop() ? $("header").addClass("scrolling") : $("header").removeClass("scrolling")
-    }),
-    $(window).on("scroll", function() {
-        200 < $(window).scrollTop() ? $(".mediaIcons").fadeIn(300) : $(".mediaIcons").fadeOut(300)
-    }),
-    $(window).on("scroll", function() {
-        600 < $(window).scrollTop() ? $(".goTop").fadeIn(300) : $(".goTop").fadeOut(300)
-    }),
+       
+        if ($(window).scrollTop() > 100) {
+            $("header").addClass("scrolling");
+        } else {
+            $("header").removeClass("scrolling");
+        }
+
+       
+        if ($(window).scrollTop() > 200) {
+            $(".mediaIcons").fadeIn(300);
+        } else {
+            $(".mediaIcons").fadeOut(300);
+        }
+
+      
+        if ($(window).scrollTop() > 600) {
+            $(".goTop").fadeIn(300);
+        } else {
+            $(".goTop").fadeOut(300);
+        }
+    });
+
     $(".goTop").on("click", function() {
         $("body, html").animate({
             scrollTop: 0
-        }, 400)
-    }),
-    $(".faqQuestion").on("click", function(o) {
-        var t = $(this).attr("href");
-        $(o.target).is(".active") ? a() : (a(),
-        $(this).addClass("active"),
-        $(".faqCont " + t).slideDown(300)),
-        o.preventDefault()
-    })
+        }, 400);
+    });
 });
 
 
+function disableScroll() {
+    document.body.style.overflow = "hidden";
+}
 
-// popup
-document.addEventListener("DOMContentLoaded", () => {
-    // 公共方法：禁止背景滑動
-    function disableScroll() {
-        document.body.style.overflow = "hidden";
+function enableScroll() {
+    document.body.style.overflow = "auto";
+}
+
+
+function initPopup(openBtnId, closeBtnId, overlayId) {
+    const openBtn = document.getElementById(openBtnId);
+    const closeBtn = document.getElementById(closeBtnId);
+    const overlay = document.getElementById(overlayId);
+
+    if (!openBtn || !closeBtn || !overlay) {
+        console.error(`Missing elements for popup: ${openBtnId}, ${closeBtnId}, ${overlayId}`);
+        return;
     }
 
-    // 公共方法：恢復背景滑動
-    function enableScroll() {
-        document.body.style.overflow = "auto";
-    }
+    openBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        overlay.style.display = "block";
+        disableScroll();
+    });
 
-    // 公共方法：初始化彈窗
-    function initPopup(openBtnId, closeBtnId, overlayId) {
-        const openBtn = document.getElementById(openBtnId);
-        const closeBtn = document.getElementById(closeBtnId);
-        const overlay = document.getElementById(overlayId);
+    closeBtn.addEventListener("click", () => {
+        overlay.style.display = "none";
+        enableScroll();
+    });
 
-        if (!openBtn || !closeBtn || !overlay) {
-            console.error(`Missing elements for popup: ${openBtnId}, ${closeBtnId}, ${overlayId}`);
-            return;
-        }
-
-        // 打開彈窗
-        openBtn.addEventListener("click", (e) => {
-            e.preventDefault(); // 防止默認行為
-            overlay.style.display = "block";
-            disableScroll();
-        });
-
-        // 關閉彈窗
-        closeBtn.addEventListener("click", () => {
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
             overlay.style.display = "none";
             enableScroll();
-        });
+        }
+    });
+}
 
-        // 點擊遮罩區域關閉彈窗
-        overlay.addEventListener("click", (e) => {
-            if (e.target === overlay) {
-                overlay.style.display = "none";
-                enableScroll();
-            }
-        });
-    }
 
-    // 初始化多個彈窗
-    initPopup("openPopup", "closePopup", "popupOverlay"); // 第一個彈窗
-    initPopup("openPopupLink", "closePopup2", "popupOverlayLink"); // 第二個彈窗
+document.addEventListener("DOMContentLoaded", () => {
+    initPopup("openPopup", "closePopup", "popupOverlay"); 
+    initPopup("openPopupLink", "closePopup2", "popupOverlayLink"); 
 });
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
     const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
-
+    
     tooltipTriggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
-            e.preventDefault(); // 阻止 <a> 的預設跳轉行為
-
-            // 切換 active 狀態
+            e.preventDefault();
             trigger.classList.toggle('active');
         });
     });
 
-    // 點擊其他地方隱藏 Tooltip
+
     document.addEventListener('click', (e) => {
         tooltipTriggers.forEach(trigger => {
             if (!trigger.contains(e.target)) {
@@ -107,4 +100,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
 
+        const hash = window.location.hash;
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 20, 
+                behavior: "smooth"
+            });
+        });
+    });
+});

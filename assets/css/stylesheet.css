@@ -555,9 +555,9 @@ button:hover{
         width: 100vw;
         height: 50vh;
         background-image: url(../images/Banner/Cloud_360.png);
-        background-size: contain; /* 或 contain */
+        background-size: contain;
         background-position: bottom center;
-        background-repeat: no-repeat; /* 避免背景图重复 */
+        background-repeat: no-repeat;
     }
 
 
