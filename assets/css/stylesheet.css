@@ -84,10 +84,10 @@ button:hover{
 
 @keyframes swing {
     0%, 100% {
-        transform: translateX(0); /* 初始與結束位置 */
+        transform: translateX(0); 
     }
     50% {
-        transform: translateX(4px); /* 向右擺動的幅度 */
+        transform: translateX(4px); 
     }
 }
 
@@ -171,7 +171,6 @@ button:hover{
         font-size: 18px;
         background-image: none;
         background-color: #EA6F17;
-       
     }
 
     .FloatButton2{
@@ -503,9 +502,6 @@ button:hover{
 
 
 @media (max-width: 1439px) {
-
-    .KeyPoint{
-    }
 
     .Head,.Tail{
         display: block;
