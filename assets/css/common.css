@@ -248,7 +248,7 @@ html {
     top: 0;
     right: 0;
     width: 40vw;
-    height: 80vw;
+    height: 50vw;
     background-image: url(../images/illustration/Element4-1.png);
     background-position: top right;
     background-size: contain;
@@ -331,8 +331,8 @@ html {
     display: none;
     position: fixed;
     z-index: 11;
-    right: 64px;
-    bottom: 280px;
+    right: 62px;
+    bottom: 160px;
     opacity: .7;
     width: 56px;
     height: 56px;
