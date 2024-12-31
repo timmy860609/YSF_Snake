@@ -520,6 +520,10 @@ button:hover{
     .Snake{
         display: none;
     }
+
+    .KeyPoint{
+        top: 80px;
+    }
 }
 
 @media (max-width: 1023px) {
@@ -531,7 +535,6 @@ button:hover{
 
     .KeyPoint{
         width: 100%;
-        top: 180px;
     }
 
     .BannerBG{
