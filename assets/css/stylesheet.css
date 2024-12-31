@@ -421,11 +421,13 @@ button:hover{
 .BannerBG{
     background-image: url(../images/Banner/KV_BG.png);
     mix-blend-mode: soft-light;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-size: cover;
     opacity: 0.4;
+    position: absolute;
+    top: 0;
 }
 .Cloud{
     background-image: url(../images/Banner/Cloud.png);
@@ -535,9 +537,6 @@ button:hover{
         width: 100%;
     }
 
-    .BannerBG{
-        height: 80vh;
-    }
 }
 
 
@@ -545,12 +544,10 @@ button:hover{
 
     .Banner{
         margin-top: 58px;
+        padding: 20% 0% 40% 0%;
     }
 
-    .BannerBG{
-        height: 80vh;
-    }
-
+   
     .Cloud{
         width: 100vw;
         height: 50vh;
@@ -564,9 +561,6 @@ button:hover{
         top: -64px;
     }
 
-    .Banner{
-        padding: 20% 0% 40% 0%;
-    }
     .KeyPoint{
         gap: 16px;
     }
