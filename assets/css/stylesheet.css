@@ -204,15 +204,15 @@ button:hover{
 .KvSale{
     width: 146px;
     position: absolute;
-    top: -80px;
+    top: -20px;
 }
 
 .coin-1{
     position: absolute;
     z-index: 1;
     width: 69px;
-    top: -10%;
-    left: 0%;
+    top: 0px;
+    left: 0px;
     transform: translateY(0%);
     animation: coin-1 2.5s infinite;
     display: none;
@@ -232,8 +232,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 76px;
-    top: -10%;
-    right: 0%;
+    top: 0;
+    right: 0;
     transform: translateY(0%);
     animation: coin-3 2s infinite;
 }
@@ -262,8 +262,8 @@ button:hover{
     position: absolute;
     z-index: 1;
     width: 30px;
-    top: -10%;
-    right: 0%;
+    top: 0;
+    right: 0;
     animation: twinkle 1.5s infinite ease-in-out;
     animation-delay: 1s;
 }
@@ -415,7 +415,7 @@ button:hover{
     margin-top: 80px;
     background: radial-gradient(50% 50% at 50% 50%, #F03E5E 0%, #880A0C 100%);
     width: 100%;  
-    height: 100vh;
+    padding:3% 0% 10% 0%;
     position: relative;
 }
 .BannerBG{
@@ -433,7 +433,7 @@ button:hover{
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 50vh;
+    height: 452px;
     position: absolute;
     left: 0;
     bottom: -4px;
@@ -441,8 +441,8 @@ button:hover{
 
 .Snake{
     background-image: url(../images/Banner/Snake.png);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 890px;
     background-position: center center;
     background-size: cover;
     position: absolute;
@@ -455,13 +455,10 @@ button:hover{
     display: flex;
     gap: 24px;
     flex-direction: column;
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-60%);
-    padding: 0 24px;
+    padding: 40px 24px;
     z-index: 10;
+    margin: 0 auto;
+    position: relative;
 }
 
 .KvTitle{
@@ -476,8 +473,8 @@ button:hover{
 
 .Head{
     background-image: url(../images/Banner/Head_360.png);
-    width: 50vw;
-    height:50vh;
+    width: 194px;
+    height:254px;
     background-position: top right;
     background-size: contain;
     background-repeat: no-repeat;
@@ -489,8 +486,8 @@ button:hover{
 
 .Tail{
     background-image: url(../images/Banner/Body_360.png);
-    width: 80vw;
-    height: 80vw;
+    width: 183px;
+    height: 272px;
     background-position: bottom left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -509,34 +506,33 @@ button:hover{
     }
 
     .Head{
-        width: 30vw;
-        height: 30vw;
+        width: 20vw;
+        height: 20vw;
     }
 
     .Tail{
-        width: 55vw;
-        height: 55vw;
+        width: 40vw;
+        height: 40vw;
     }
 
     .Snake{
         display: none;
     }
 
-    .KeyPoint{
-        width: 80%;
-        transform: translate(-50%,-50%);
+    .KvSale{
+        top: 0;
     }
 }
 
 @media (max-width: 1023px) {
 
     .Banner{
-        height: 80vh;
         margin-top: 72px;
+        padding: 10% 0% 40% 0%;
     }
 
     .KeyPoint{
-        
+        width: 100%;
     }
 
     .BannerBG{
@@ -564,11 +560,15 @@ button:hover{
         background-repeat: no-repeat;
     }
 
+    .KvSale{
+        top: -64px;
+    }
 
+    .Banner{
+        padding: 20% 0% 40% 0%;
+    }
     .KeyPoint{
-        width: 100%;
         gap: 16px;
-        transform: translate(-50%,-60%);
     }
     
     .Head{
